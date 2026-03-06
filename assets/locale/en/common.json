@@ -1,8 +1,9 @@
 {
   "layout": {
-    "title": "Kitchen Sink",
+    "title": "Deepankar S.",
     "nav": {
       "home": "Home",
+      "components": "Components",
       "about": "About"
     },
     "footer": "{{year}} © Deepankar S. All rights reserved."
@@ -14,9 +15,52 @@
     "system": "System"
   },
   "about": {
-    "greeting": "Hello from About!"
+    "greeting": "Engineer, builder, and hands-on tinkerer from Jajpur, Odisha."
   },
-  "home": {
+  "homepage": {
+    "hero": {
+      "eyebrow": "Senior Full Stack Engineer | Team Lead",
+      "title": "Hi, I'm Deepankar. I build resilient products and fix real-world systems.",
+      "summary": "I lead full stack teams and design scalable multi-tenant platforms. Outside work, I run a homelab, repair electronics, do home electrical work, and recharge through gardening and photography.",
+      "primaryCta": "Explore Component Showcase",
+      "secondaryCta": "Let's Connect"
+    },
+    "contact": {
+      "title": "Quick Connect",
+      "location": "Jajpur, Odisha, India",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn"
+    },
+    "professional": {
+      "title": "Professional Side",
+      "summary": "7+ years building web systems with React, Next.js, Node.js, and AWS, with a strong focus on quality, testing, automation, and CI/CD.",
+      "magicEdtech": "At Magic EdTech, I lead a greenfield Online Enrollment platform and architected a multi-tenant setup that accelerated client onboarding by 40%.",
+      "tikkl": "At Tikkl, I supported a high-traffic ticketing platform and helped maintain 99.9% uptime during global peak events.",
+      "modernization": "I enjoy modernizing legacy frontends into fast, maintainable React applications."
+    },
+    "tinkerer": {
+      "title": "Tinkerer Side",
+      "summary": "I learn by doing, from self-hosted infrastructure to electrical boards and hardware repairs.",
+      "analogEngineer": "I handle home electrical wiring, switchboards, breaker setups, and repair desktops, laptops, and phone hardware.",
+      "nature": "Gardening and photography keep me sharp and grounded after long debugging sessions."
+    },
+    "toolkit": {
+      "title": "Technical Toolkit",
+      "items": {
+        "js": "JavaScript (ES2022+)",
+        "ts": "TypeScript",
+        "react": "React",
+        "next": "Next.js",
+        "node": "Node.js",
+        "aws": "AWS (Lambda, DynamoDB, Cognito)",
+        "postgres": "PostgreSQL",
+        "mongodb": "MongoDB",
+        "playwright": "Playwright",
+        "cypress": "Cypress"
+      }
+    }
+  },
+  "components": {
     "tabs": {
       "inputs": "Inputs",
       "dataDisplay": "Data Display",
