@@ -1,17 +1,20 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { useTranslation } from "react-i18next";
 import type { ReactNode } from "react";
 
 type MainProps = {
-	children: ReactNode;
+  children: ReactNode;
 };
 
 export const Main = ({ children }: MainProps) => {
-	return (
-		<>
-			<Header title="Kitchen Sink" />
-			<main className="container mx-auto flex-1">{children}</main>
-			<Footer />
-		</>
-	);
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Header title={t("layout.title")} />
+      <main className="container mx-auto flex-1">{children}</main>
+      <Footer />
+    </>
+  );
 };

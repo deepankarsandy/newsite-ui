@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/dark-mode/theme-provider";
+import "@/lib/i18n";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -13,15 +14,15 @@ const router = createRouter({ routeTree });
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
-	interface Register {
-		router: typeof router;
-	}
+  interface Register {
+    router: typeof router;
+  }
 }
 
 createRoot(document.getElementById("root") as HTMLElement).render(
-	<StrictMode>
-		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-			<RouterProvider router={router} />
-		</ThemeProvider>
-	</StrictMode>,
+  <StrictMode>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </StrictMode>,
 );
