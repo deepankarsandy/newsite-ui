@@ -155,7 +155,7 @@ function Index() {
                 </Badge>
               </div>
               <Progress value={33} className="w-full" />
-              <ScrollArea className="h-[100px] w-full rounded-md border p-4">
+              <ScrollArea className="h-25 w-full rounded-md border p-4">
                 {t("home.dataDisplay.story")}
               </ScrollArea>
             </CardContent>
@@ -190,7 +190,7 @@ function Index() {
               </div>
               <Separator />
               <Select>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-45">
                   <SelectValue placeholder={t("home.feedback.selectFruit")} />
                 </SelectTrigger>
                 <SelectContent>
