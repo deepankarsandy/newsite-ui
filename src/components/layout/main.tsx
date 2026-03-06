@@ -13,7 +13,7 @@ export const Main = ({ children }: MainProps) => {
   return (
     <>
       <Header title={t("layout.title")} />
-      <main className="container mx-auto flex-1">{children}</main>
+      <main className="container mx-auto flex-1 pt-16">{children}</main>
       <Footer />
     </>
   );

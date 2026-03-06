@@ -10,8 +10,8 @@ export const Header = ({ title }: HeaderProps) => {
   const { t } = useTranslation();
 
   return (
-    <header className="border-b">
-      <div className="container mx-auto py-4 flex justify-between items-center">
+    <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <div className="container mx-auto flex h-16 justify-between items-center">
         <Link to="/">
           <h1 className="text-2xl font-bold">{title}</h1>
         </Link>
