@@ -18,6 +18,12 @@
   "about": {
     "greeting": "Engineer, builder, and hands-on tinkerer from Jajpur, Odisha."
   },
+  "media": {
+    "eyebrow": "Curated Cinema Library",
+    "title": "Deepankar's Media Server",
+    "poweredBy": "Powered by",
+    "jellyfin": "Jellyfin"
+  },
   "components": {
     "tabs": {
       "inputs": "Inputs",
