@@ -6,16 +6,16 @@ import { defineConfig } from "vitest/config";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), tanstackRouter(), tailwindcss()],
-	test: {
-		environment: "jsdom",
-		globals: true,
-		setupFiles: "./src/test/setup.ts",
-		include: ["src/**/__tests__/**/*.{test,spec}.{ts,tsx}"],
-	},
-	resolve: {
-		alias: {
-			"@": path.resolve(__dirname, "./src"),
-		},
-	},
+  plugins: [react(), tanstackRouter(), tailwindcss()],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./src/test/setup.ts",
+    include: ["src/**/__tests__/**/*.{test,spec}.{ts,tsx}"],
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });

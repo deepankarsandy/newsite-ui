@@ -4,17 +4,17 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 
 type MainProps = {
-	children: ReactNode;
+  children: ReactNode;
 };
 
 export const Main = ({ children }: MainProps) => {
-	const { t } = useTranslation();
+  const { t } = useTranslation();
 
-	return (
-		<>
-			<Header title={t("layout.title")} />
-			<main className="container mx-auto flex-1 pt-16">{children}</main>
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Header title={t("layout.title")} />
+      <main className="container mx-auto flex-1 pt-16">{children}</main>
+      <Footer />
+    </>
+  );
 };

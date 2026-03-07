@@ -1,0 +1,36 @@
+# dependencies
+node_modules
+.pnpm-store
+.tanstack
+
+# build outputs
+dist
+build
+coverage
+.next
+.out
+
+# lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lockb
+
+# package metadata
+package.json
+
+# generated files
+*.gen.ts
+*.generated.ts
+
+# env files
+.env
+.env.*
+
+# logs
+*.log
+
+# editor
+.vscode
+.idea
+.DS_Store
