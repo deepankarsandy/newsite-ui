@@ -41,32 +41,20 @@ export const ComponentsShowcase = () => {
     <div className="h-full w-full py-8">
       <Tabs defaultValue="inputs" className="w-full">
         <TabsList>
-          <TabsTrigger value="inputs">
-            {t("components.tabs.inputs")}
-          </TabsTrigger>
-          <TabsTrigger value="dataDisplay">
-            {t("components.tabs.dataDisplay")}
-          </TabsTrigger>
-          <TabsTrigger value="feedback">
-            {t("components.tabs.feedback")}
-          </TabsTrigger>
+          <TabsTrigger value="inputs">{t("components.tabs.inputs")}</TabsTrigger>
+          <TabsTrigger value="dataDisplay">{t("components.tabs.dataDisplay")}</TabsTrigger>
+          <TabsTrigger value="feedback">{t("components.tabs.feedback")}</TabsTrigger>
         </TabsList>
         <TabsContent value="inputs">
           <Card>
             <CardHeader>
               <CardTitle>{t("components.inputs.title")}</CardTitle>
-              <CardDescription>
-                {t("components.inputs.description")}
-              </CardDescription>
+              <CardDescription>{t("components.inputs.description")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid w-full max-w-sm items-center gap-1.5">
                 <Label htmlFor="email">{t("components.inputs.email")}</Label>
-                <Input
-                  type="email"
-                  id="email"
-                  placeholder={t("components.inputs.email")}
-                />
+                <Input type="email" id="email" placeholder={t("components.inputs.email")} />
               </div>
               <div className="flex items-center space-x-2">
                 <Switch
@@ -74,9 +62,7 @@ export const ComponentsShowcase = () => {
                   checked={switchChecked}
                   onCheckedChange={setSwitchChecked}
                 />
-                <Label htmlFor="airplane-mode">
-                  {t("components.inputs.airplaneMode")}
-                </Label>
+                <Label htmlFor="airplane-mode">{t("components.inputs.airplaneMode")}</Label>
               </div>
               <div className="w-full max-w-sm">
                 <Slider
@@ -85,9 +71,7 @@ export const ComponentsShowcase = () => {
                   max={100}
                   step={1}
                 />
-                <p className="mt-2">
-                  {t("components.inputs.sliderValue", { value: sliderValue })}
-                </p>
+                <p className="mt-2">{t("components.inputs.sliderValue", { value: sliderValue })}</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox id="terms" />
@@ -101,15 +85,11 @@ export const ComponentsShowcase = () => {
               <RadioGroup defaultValue="option-one">
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="option-one" id="option-one" />
-                  <Label htmlFor="option-one">
-                    {t("components.inputs.optionOne")}
-                  </Label>
+                  <Label htmlFor="option-one">{t("components.inputs.optionOne")}</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="option-two" id="option-two" />
-                  <Label htmlFor="option-two">
-                    {t("components.inputs.optionTwo")}
-                  </Label>
+                  <Label htmlFor="option-two">{t("components.inputs.optionTwo")}</Label>
                 </div>
               </RadioGroup>
             </CardContent>
@@ -122,9 +102,7 @@ export const ComponentsShowcase = () => {
           <Card>
             <CardHeader>
               <CardTitle>{t("components.dataDisplay.title")}</CardTitle>
-              <CardDescription>
-                {t("components.dataDisplay.description")}
-              </CardDescription>
+              <CardDescription>{t("components.dataDisplay.description")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex space-x-2">
@@ -145,15 +123,9 @@ export const ComponentsShowcase = () => {
               </div>
               <div className="flex space-x-2">
                 <Badge>{t("components.dataDisplay.badgeDefault")}</Badge>
-                <Badge variant="secondary">
-                  {t("components.dataDisplay.badgeSecondary")}
-                </Badge>
-                <Badge variant="outline">
-                  {t("components.dataDisplay.badgeOutline")}
-                </Badge>
-                <Badge variant="destructive">
-                  {t("components.dataDisplay.badgeDestructive")}
-                </Badge>
+                <Badge variant="secondary">{t("components.dataDisplay.badgeSecondary")}</Badge>
+                <Badge variant="outline">{t("components.dataDisplay.badgeOutline")}</Badge>
+                <Badge variant="destructive">{t("components.dataDisplay.badgeDestructive")}</Badge>
               </div>
               <Progress value={33} className="w-full" />
               <ScrollArea className="h-25 w-full rounded-md border p-4">
@@ -166,52 +138,33 @@ export const ComponentsShowcase = () => {
           <Card>
             <CardHeader>
               <CardTitle>{t("components.feedback.title")}</CardTitle>
-              <CardDescription>
-                {t("components.feedback.description")}
-              </CardDescription>
+              <CardDescription>{t("components.feedback.description")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <Alert>
                 <InfoIcon className="h-4 w-4" />
                 <AlertTitle>{t("components.feedback.alertTitle")}</AlertTitle>
-                <AlertDescription>
-                  {t("components.feedback.alertDescription")}
-                </AlertDescription>
+                <AlertDescription>{t("components.feedback.alertDescription")}</AlertDescription>
               </Alert>
               <div className="flex space-x-2">
                 <Toggle aria-label={t("components.feedback.toggleBell")}>
                   <BellIcon className="h-4 w-4" />
                 </Toggle>
-                <Toggle
-                  aria-label={t("components.feedback.toggleCheck")}
-                  defaultPressed={true}
-                >
+                <Toggle aria-label={t("components.feedback.toggleCheck")} defaultPressed={true}>
                   <CheckIcon className="h-4 w-4" />
                 </Toggle>
               </div>
               <Separator />
               <Select>
                 <SelectTrigger className="w-45">
-                  <SelectValue
-                    placeholder={t("components.feedback.selectFruit")}
-                  />
+                  <SelectValue placeholder={t("components.feedback.selectFruit")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="apple">
-                    {t("components.feedback.apple")}
-                  </SelectItem>
-                  <SelectItem value="banana">
-                    {t("components.feedback.banana")}
-                  </SelectItem>
-                  <SelectItem value="blueberry">
-                    {t("components.feedback.blueberry")}
-                  </SelectItem>
-                  <SelectItem value="grapes">
-                    {t("components.feedback.grapes")}
-                  </SelectItem>
-                  <SelectItem value="pineapple">
-                    {t("components.feedback.pineapple")}
-                  </SelectItem>
+                  <SelectItem value="apple">{t("components.feedback.apple")}</SelectItem>
+                  <SelectItem value="banana">{t("components.feedback.banana")}</SelectItem>
+                  <SelectItem value="blueberry">{t("components.feedback.blueberry")}</SelectItem>
+                  <SelectItem value="grapes">{t("components.feedback.grapes")}</SelectItem>
+                  <SelectItem value="pineapple">{t("components.feedback.pineapple")}</SelectItem>
                 </SelectContent>
               </Select>
             </CardContent>

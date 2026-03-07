@@ -1,11 +1,4 @@
-import {
-  Leaf,
-  Linkedin,
-  Mail,
-  MapPin,
-  ShieldCheck,
-  Wrench,
-} from "lucide-react";
+import { Leaf, Linkedin, Mail, MapPin, ShieldCheck, Wrench } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,16 +22,10 @@ export const HomePage = () => {
         className="bg-card/70 relative grid gap-6 rounded-3xl border p-6 backdrop-blur-sm md:grid-cols-3 md:p-10"
       >
         <div className="space-y-5 md:col-span-2">
-          <Badge
-            variant="secondary"
-            className="text-xs tracking-wider uppercase"
-          >
+          <Badge variant="secondary" className="text-xs tracking-wider uppercase">
             {t("aboutme.hero.role")}
           </Badge>
-          <h1
-            id="intro-heading"
-            className="text-3xl leading-tight font-bold md:text-5xl"
-          >
+          <h1 id="intro-heading" className="text-3xl leading-tight font-bold md:text-5xl">
             {t("aboutme.hero.name")}
           </h1>
           <p className="text-muted-foreground max-w-2xl text-sm md:text-base">
@@ -48,16 +35,11 @@ export const HomePage = () => {
 
         <Card className="md:w-full md:max-w-sm md:self-end md:justify-self-end">
           <CardHeader className="pb-2">
-            <CardTitle className="text-lg">
-              {t("aboutme.contact.title")}
-            </CardTitle>
+            <CardTitle className="text-lg">{t("aboutme.contact.title")}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-sm">
             <p className="flex items-start gap-2">
-              <MapPin
-                className="text-muted-foreground mt-0.5 h-4 w-4"
-                aria-hidden={true}
-              />
+              <MapPin className="text-muted-foreground mt-0.5 h-4 w-4" aria-hidden={true} />
               <span>
                 <span className="text-muted-foreground">
                   {t("aboutme.contact.locationLabel")}:{" "}
@@ -68,20 +50,14 @@ export const HomePage = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {t("aboutme.contact.location")} (
-                  {t("aboutme.contact.locationCta")})
+                  {t("aboutme.contact.location")} ({t("aboutme.contact.locationCta")})
                 </a>
               </span>
             </p>
             <p className="flex items-start gap-2">
-              <Mail
-                className="text-muted-foreground mt-0.5 h-4 w-4"
-                aria-hidden={true}
-              />
+              <Mail className="text-muted-foreground mt-0.5 h-4 w-4" aria-hidden={true} />
               <span>
-                <span className="text-muted-foreground">
-                  {t("aboutme.contact.emailLabel")}:{" "}
-                </span>
+                <span className="text-muted-foreground">{t("aboutme.contact.emailLabel")}: </span>
                 <a
                   className="underline decoration-dotted underline-offset-4"
                   href="mailto:dee.sandy@hotmail.com"
@@ -91,10 +67,7 @@ export const HomePage = () => {
               </span>
             </p>
             <p className="flex items-start gap-2">
-              <Linkedin
-                className="text-muted-foreground mt-0.5 h-4 w-4"
-                aria-hidden={true}
-              />
+              <Linkedin className="text-muted-foreground mt-0.5 h-4 w-4" aria-hidden={true} />
               <span>
                 <span className="text-muted-foreground">
                   {t("aboutme.contact.linkedinLabel")}:{" "}
@@ -140,9 +113,7 @@ export const HomePage = () => {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">
-                {t("aboutme.professional.masteryTitle")}
-              </CardTitle>
+              <CardTitle className="text-lg">{t("aboutme.professional.masteryTitle")}</CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-3 text-sm">
               <p>{t("aboutme.professional.frontend")}</p>
@@ -153,10 +124,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section
-        aria-labelledby="skills-heading"
-        className="bg-card/60 mt-8 rounded-2xl border p-6"
-      >
+      <section aria-labelledby="skills-heading" className="bg-card/60 mt-8 rounded-2xl border p-6">
         <h2 id="skills-heading" className="text-2xl font-semibold">
           {t("aboutme.skills.title")}
         </h2>

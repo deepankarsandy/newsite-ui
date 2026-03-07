@@ -10,7 +10,7 @@ export const Header = ({ title }: HeaderProps) => {
   const { t } = useTranslation();
 
   return (
-    <header className="bg-background/95 supports-[backdrop-filter]:bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur">
+    <header className="bg-background/95 supports-backdrop-filter:bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur">
       <div className="container mx-auto flex h-16 items-center justify-between">
         <Link to="/">
           <h1 className="text-2xl font-bold">{title}</h1>
