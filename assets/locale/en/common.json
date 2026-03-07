@@ -3,7 +3,9 @@
     "title": "Deepankar S",
     "nav": {
       "home": "Home",
-      "about": "About"
+      "about": "About",
+      "media": "Media",
+      "gallery": "Gallery"
     },
     "footer": "{{year}} © Deepankar S. All rights reserved."
   },
@@ -20,7 +22,8 @@
     "tabs": {
       "inputs": "Inputs",
       "dataDisplay": "Data Display",
-      "feedback": "Feedback"
+      "feedback": "Feedback",
+      "icons": "Icons"
     },
     "inputs": {
       "title": "Input Components",

@@ -31,6 +31,8 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Toggle } from "@/components/ui/toggle";
+import { ImmichLogo } from "@/icons/immich-icon";
+import { JellyfinLogo } from "@/icons/jellyfin-icon";
 
 export const ComponentsShowcase = () => {
   const [switchChecked, setSwitchChecked] = useState(false);
@@ -44,6 +46,7 @@ export const ComponentsShowcase = () => {
           <TabsTrigger value="inputs">{t("components.tabs.inputs")}</TabsTrigger>
           <TabsTrigger value="dataDisplay">{t("components.tabs.dataDisplay")}</TabsTrigger>
           <TabsTrigger value="feedback">{t("components.tabs.feedback")}</TabsTrigger>
+          <TabsTrigger value="icons">{t("components.tabs.icons")}</TabsTrigger>
         </TabsList>
         <TabsContent value="inputs">
           <Card>
@@ -167,6 +170,17 @@ export const ComponentsShowcase = () => {
                   <SelectItem value="pineapple">{t("components.feedback.pineapple")}</SelectItem>
                 </SelectContent>
               </Select>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="icons">
+          <Card>
+            <CardHeader>
+              Custom Icons: Use lucid-react for other icons
+            </CardHeader>
+            <CardContent className="flex gap-4">
+              <ImmichLogo className="h-10 w-10" />
+              <JellyfinLogo className="h-9 w-9" />
             </CardContent>
           </Card>
         </TabsContent>

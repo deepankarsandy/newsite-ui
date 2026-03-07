@@ -16,11 +16,11 @@ export const Header = ({ title }: HeaderProps) => {
           <h1 className="text-2xl font-bold">{title}</h1>
         </Link>
         <div className="flex items-center gap-2">
-          <Link to="/" className="[&.active]:font-bold">
-            {t("layout.nav.home")}
+          <Link to="/media" className="[&.active]:font-bold">
+            {t("layout.nav.media")}
           </Link>
-          <Link to="/about" className="[&.active]:font-bold">
-            {t("layout.nav.about")}
+          <Link to="/gallery" className="[&.active]:font-bold">
+            {t("layout.nav.gallery")}
           </Link>
           <ModeToggle />
         </div>
