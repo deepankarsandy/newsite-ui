@@ -1,62 +1,62 @@
 {
-  "layout": {
-    "title": "Deepankar S",
-    "nav": {
-      "home": "Home",
-      "about": "About"
-    },
-    "footer": "{{year}} © Deepankar S. All rights reserved."
-  },
-  "theme": {
-    "toggle": "Toggle theme",
-    "light": "Light",
-    "dark": "Dark",
-    "system": "System"
-  },
-  "about": {
-    "greeting": "Engineer, builder, and hands-on tinkerer from Jajpur, Odisha."
-  },
-  "components": {
-    "tabs": {
-      "inputs": "Inputs",
-      "dataDisplay": "Data Display",
-      "feedback": "Feedback"
-    },
-    "inputs": {
-      "title": "Input Components",
-      "description": "Various input components from shadcn/ui",
-      "email": "Email",
-      "airplaneMode": "Airplane Mode",
-      "sliderValue": "Slider value: {{value}}",
-      "acceptTerms": "Accept terms and conditions",
-      "optionOne": "Option One",
-      "optionTwo": "Option Two",
-      "saveChanges": "Save changes"
-    },
-    "dataDisplay": {
-      "title": "Data Display Components",
-      "description": "Components for displaying data",
-      "avatarShadcnAlt": "@shadcn",
-      "avatarVercelAlt": "@vercel",
-      "badgeDefault": "Default",
-      "badgeSecondary": "Secondary",
-      "badgeOutline": "Outline",
-      "badgeDestructive": "Destructive",
-      "story": "Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to catch the jokester. And the worst part was, the king was starting to find the jokes funny. He fought hard to maintain a straight face, but it was getting harder and harder. The people of the kingdom noticed the king's new good mood, and they were all much happier for it."
-    },
-    "feedback": {
-      "title": "Feedback Components",
-      "description": "Components for user feedback and notifications",
-      "alertTitle": "Heads up!",
-      "alertDescription": "You can add components to your app using the cli.",
-      "toggleBell": "Toggle bell",
-      "toggleCheck": "Toggle check",
-      "selectFruit": "Select a fruit",
-      "apple": "Apple",
-      "banana": "Banana",
-      "blueberry": "Blueberry",
-      "grapes": "Grapes",
-      "pineapple": "Pineapple"
-    }
-  }
+	"layout": {
+		"title": "Deepankar S",
+		"nav": {
+			"home": "Home",
+			"about": "About"
+		},
+		"footer": "{{year}} © Deepankar S. All rights reserved."
+	},
+	"theme": {
+		"toggle": "Toggle theme",
+		"light": "Light",
+		"dark": "Dark",
+		"system": "System"
+	},
+	"about": {
+		"greeting": "Engineer, builder, and hands-on tinkerer from Jajpur, Odisha."
+	},
+	"components": {
+		"tabs": {
+			"inputs": "Inputs",
+			"dataDisplay": "Data Display",
+			"feedback": "Feedback"
+		},
+		"inputs": {
+			"title": "Input Components",
+			"description": "Various input components from shadcn/ui",
+			"email": "Email",
+			"airplaneMode": "Airplane Mode",
+			"sliderValue": "Slider value: {{value}}",
+			"acceptTerms": "Accept terms and conditions",
+			"optionOne": "Option One",
+			"optionTwo": "Option Two",
+			"saveChanges": "Save changes"
+		},
+		"dataDisplay": {
+			"title": "Data Display Components",
+			"description": "Components for displaying data",
+			"avatarShadcnAlt": "@shadcn",
+			"avatarVercelAlt": "@vercel",
+			"badgeDefault": "Default",
+			"badgeSecondary": "Secondary",
+			"badgeOutline": "Outline",
+			"badgeDestructive": "Destructive",
+			"story": "Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to catch the jokester. And the worst part was, the king was starting to find the jokes funny. He fought hard to maintain a straight face, but it was getting harder and harder. The people of the kingdom noticed the king's new good mood, and they were all much happier for it."
+		},
+		"feedback": {
+			"title": "Feedback Components",
+			"description": "Components for user feedback and notifications",
+			"alertTitle": "Heads up!",
+			"alertDescription": "You can add components to your app using the cli.",
+			"toggleBell": "Toggle bell",
+			"toggleCheck": "Toggle check",
+			"selectFruit": "Select a fruit",
+			"apple": "Apple",
+			"banana": "Banana",
+			"blueberry": "Blueberry",
+			"grapes": "Grapes",
+			"pineapple": "Pineapple"
+		}
+	}
 }
