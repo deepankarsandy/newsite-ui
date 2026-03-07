@@ -5,5 +5,5 @@ export const Route = createLazyFileRoute("/gallery")({
 });
 
 function Media() {
-  return <div className="p-2">TODO: Gallery</div>;
+  return <div className="p-2">Coming Soon...</div>;
 }
