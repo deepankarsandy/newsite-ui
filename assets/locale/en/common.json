@@ -24,6 +24,12 @@
     "poweredBy": "Powered by",
     "jellyfin": "Jellyfin"
   },
+  "gallery": {
+    "eyebrow": "Curated Photo Collection",
+    "title": "Deepankar's Image Gallery",
+    "poweredBy": "Powered by",
+    "immich": "Immich"
+  },
   "components": {
     "tabs": {
       "inputs": "Inputs",

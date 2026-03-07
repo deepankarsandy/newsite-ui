@@ -1,6 +1,7 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { JellyfinLogo } from "@/icons/jellyfin-icon";
 
 export const Route = createLazyFileRoute("/media")({
   component: Media,
@@ -71,8 +72,9 @@ function Media() {
           <h1 className="text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
             {t("media.title")}
           </h1>
-          <p className="mt-4 text-sm text-zinc-200/90">
-            {t("media.poweredBy")}{" "}
+          <p className="mt-4 flex items-center justify-center gap-2 text-sm text-zinc-200/90">
+            <span>{t("media.poweredBy")}</span>
+            <JellyfinLogo size={18} className="shrink-0" aria-hidden="true" />
             <a
               href="https://jellyfin.org/"
               target="_blank"
