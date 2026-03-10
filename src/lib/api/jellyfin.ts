@@ -14,18 +14,18 @@ type JellyfinConfig = {
 };
 
 const getJellyfinConfig = (): JellyfinConfig => {
-  const { JELLYFIN_BASE_URL, JELLYFIN_API_KEY, JELLYFIN_USER_ID } = import.meta.env;
+  const { VITE_JELLYFIN_BASE_URL, VITE_JELLYFIN_API_KEY, VITE_JELLYFIN_USER_ID } = import.meta.env;
 
-  if (!JELLYFIN_BASE_URL || !JELLYFIN_API_KEY || !JELLYFIN_USER_ID) {
+  if (!VITE_JELLYFIN_BASE_URL || !VITE_JELLYFIN_API_KEY || !VITE_JELLYFIN_USER_ID) {
     throw new Error(
-      "Missing Jellyfin configuration. Set JELLYFIN_BASE_URL, JELLYFIN_API_KEY, and JELLYFIN_USER_ID.",
+      "Missing Jellyfin configuration. Set VITE_JELLYFIN_BASE_URL, VITE_JELLYFIN_API_KEY, and VITE_JELLYFIN_USER_ID.",
     );
   }
 
   return {
-    baseUrl: JELLYFIN_BASE_URL,
-    token: JELLYFIN_API_KEY,
-    userId: JELLYFIN_USER_ID,
+    baseUrl: VITE_JELLYFIN_BASE_URL,
+    token: VITE_JELLYFIN_API_KEY,
+    userId: VITE_JELLYFIN_USER_ID,
   };
 };
 

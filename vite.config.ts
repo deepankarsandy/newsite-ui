@@ -24,11 +24,16 @@ export default defineConfig({
   server: {
     port: 8080,
   },
+  base: process.env.NODE_ENV === "production" ? "/site/" : "/",
   test: {
     environment: "jsdom",
     globals: true,
     setupFiles: "./src/test/setup.ts",
     include: ["src/**/__tests__/**/*.{test,spec}.{ts,tsx}"],
+  },
+  preview: {
+    port: 5000,
+    allowedHosts: ["sandyhome.local", "deepankar.ddns.net"],
   },
   resolve: {
     alias: {

@@ -1,9 +1,10 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly JELLYFIN_BASE_URL: string;
-  readonly JELLYFIN_API_KEY: string;
-  readonly JELLYFIN_USER_ID: string;
+  readonly VITE_JELLYFIN_BASE_URL: string;
+  readonly VITE_JELLYFIN_API_KEY: string;
+  readonly VITE_JELLYFIN_USER_ID: string;
+  readonly VITE_APP_ENV: "development" | "production";
 }
 
 interface ImportMeta {
