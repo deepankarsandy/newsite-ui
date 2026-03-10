@@ -24,6 +24,7 @@ node-compile-cache
 *.sln
 *.sw?
 
+.env
 .env.*
 !.env.example
 src/routeTree.gen.ts
