@@ -2,16 +2,21 @@
   "files": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.app.json",
     },
     {
-      "path": "./tsconfig.node.json"
-    }
+      "path": "./tsconfig.node.json",
+    },
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+      "@assets": ["./assets/index.ts"],
+      "@assets/*": ["./assets/*"],
+      "@assets/youtube-data": ["./assets/youtube-data"],
+      "@assets/youtube-data/*": ["./assets/youtube-data/*"],
+      "@assets/locale/*": ["./assets/locale/*"],
+      "@/*": ["./src/*"],
+    },
+  },
 }

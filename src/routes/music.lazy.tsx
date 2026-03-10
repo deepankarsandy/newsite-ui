@@ -1,18 +1,16 @@
+import { YOUTUBE_PLAYLISTS, YOUTUBE_PROFILE } from "@assets";
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { ChevronDown, Disc3, ListMusic } from "lucide-react";
+import { ChevronDown, Disc3, ListMusic, Youtube } from "lucide-react";
 import { useState } from "react";
-import pl1 from "@/../../youtube-data/music-playlist-90-2010s-music.json";
-import pl2 from "@/../../youtube-data/music-playlist-bollywood-old.json";
-import pl3 from "@/../../youtube-data/music-playlist-classic-rocks.json";
-import pl4 from "@/../../youtube-data/music-playlist-slow-favs.json";
 import { YTMusicLogo } from "@/icons/yt-music-icon";
+import { cn } from "@/lib/utils";
+import { YouTubeLogo } from "@/icons/youtube-icon";
 
 export const Route = createLazyFileRoute("/music")({
   component: Music,
 });
 
 function Music() {
-  const allPlaylists = [pl2, pl3, pl4, pl1];
   const [expandedByPlaylist, setExpandedByPlaylist] = useState<Record<string, boolean>>({});
 
   const togglePlaylist = (playlistId: string) => {
@@ -24,9 +22,39 @@ function Music() {
 
   return (
     <main className="min-h-screen bg-black text-white">
+      <div className="flex flex-wrap items-center justify-center gap-4 px-4 py-3 transition-colors hover:bg-white/5 sm:px-5">
+        <div className="flex flex-col items-center">
+          <SongThumbnail
+            title={YOUTUBE_PROFILE.name}
+            thumbnail={YOUTUBE_PROFILE.music.thumbnail}
+            className="h-24 w-24"
+          />
+          <span>{YOUTUBE_PROFILE.name}</span>
+        </div>
+        <div className="flex gap-4 flex-wrap items-center">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={YOUTUBE_PROFILE.music.url}
+            className="flex items-center gap-2 py-3 transition-colors hover:bg-white/5 sm:px-5"
+          >
+            <YTMusicLogo className="h-5 w-5" />
+            <span>Visit YT Music</span>
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={YOUTUBE_PROFILE.url}
+            className="flex items-center gap-2 py-3 transition-colors hover:bg-white/5 sm:px-5"
+          >
+            <YouTubeLogo className="h-5 w-5" />
+            <span>Visit YouTube</span>
+          </a>
+        </div>
+      </div>
       <section className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
         <div className="space-y-4">
-          {allPlaylists.map((pl, idx) => {
+          {YOUTUBE_PLAYLISTS.map((pl, idx) => {
             const playlistId = pl.url || pl.name;
             const isExpanded = Boolean(expandedByPlaylist[playlistId]);
             const panelId = `playlist-panel-${idx}`;
@@ -58,9 +86,9 @@ function Music() {
                     href={pl.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1 rounded-md border px-2 py-1 text-sm hover:bg-blue-500/20"
+                    className="inline-flex shrink-0 items-center gap-1 gap-2 rounded-md border px-2 py-1 text-sm hover:bg-blue-500/20"
                   >
-                    Vew Playlist
+                    View Playlist
                     <YTMusicLogo className="h-6 w-6" />
                   </a>
                 </header>
@@ -85,7 +113,7 @@ function Music() {
                             </p>
                           </div>
                           <div className="flex items-center gap-2 text-zinc-400">
-                                                <YTMusicLogo className="h-5 w-5" />
+                            <YTMusicLogo className="h-5 w-5" />
                           </div>
                         </a>
                       </li>
@@ -101,7 +129,15 @@ function Music() {
   );
 }
 
-function SongThumbnail({ title, thumbnail }: { title: string; thumbnail: string }) {
+function SongThumbnail({
+  title,
+  thumbnail,
+  className,
+}: {
+  title: string;
+  thumbnail: string;
+  className?: string;
+}) {
   const [failed, setFailed] = useState(false);
 
   if (!thumbnail || failed) {
@@ -116,7 +152,7 @@ function SongThumbnail({ title, thumbnail }: { title: string; thumbnail: string 
     <img
       src={thumbnail}
       alt={`thumbnail for ${title}`}
-      className="h-16 w-16 shrink-0 rounded-md border border-white/15 object-cover"
+      className={cn("h-16 w-16 shrink-0 rounded-md border border-white/15 object-cover", className)}
       loading="lazy"
       onError={() => setFailed(true)}
     />

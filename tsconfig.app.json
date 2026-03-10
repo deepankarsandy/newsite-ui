@@ -18,10 +18,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
     /* Paths */
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "@assets": ["./assets/index.ts"],
+      "@assets/*": ["./assets/*"],
+      "@assets/youtube-data": ["./assets/youtube-data"],
+      "@assets/youtube-data/*": ["./assets/youtube-data/*"],
+      "@assets/locale/*": ["./assets/locale/*"],
+    },
   },
-  "include": ["src"]
+  "include": ["src"],
 }
