@@ -1,6 +1,6 @@
 import { YOUTUBE_PLAYLISTS, YOUTUBE_PROFILE } from "@assets";
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { ChevronDown, Disc3, ListMusic, Youtube } from "lucide-react";
+import { ChevronDown, Disc3, ListMusic } from "lucide-react";
 import { useState } from "react";
 import { YTMusicLogo } from "@/icons/yt-music-icon";
 import { cn } from "@/lib/utils";
@@ -31,7 +31,7 @@ function Music() {
           />
           <span>{YOUTUBE_PROFILE.name}</span>
         </div>
-        <div className="flex gap-4 flex-wrap items-center">
+        <div className="flex flex-wrap items-center gap-4">
           <a
             target="_blank"
             rel="noreferrer"
@@ -86,7 +86,7 @@ function Music() {
                     href={pl.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1 gap-2 rounded-md border px-2 py-1 text-sm hover:bg-blue-500/20"
+                    className="inline-flex shrink-0 items-center gap-2 rounded-md border px-2 py-1 text-sm hover:bg-blue-500/20"
                   >
                     View Playlist
                     <YTMusicLogo className="h-6 w-6" />
