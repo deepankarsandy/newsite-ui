@@ -18,6 +18,9 @@ export default defineConfig({
       developmentOnly: true     // Only in development
     }
   )],
+  server: {
+    port: 8080,
+  },
   test: {
     environment: "jsdom",
     globals: true,

@@ -16,6 +16,9 @@ export const Header = ({ title }: HeaderProps) => {
           <h1 className="text-2xl font-bold">{title}</h1>
         </Link>
         <div className="flex items-center gap-2">
+          <Link to="/music" className="[&.active]:font-bold">
+            {t("layout.nav.music")}
+          </Link>
           <Link to="/media" className="[&.active]:font-bold">
             {t("layout.nav.media")}
           </Link>
