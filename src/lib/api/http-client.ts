@@ -2,6 +2,7 @@ export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
 export type RequestConfig = {
   body?: BodyInit | null;
+  credentials?: RequestCredentials;
   headers?: HeadersInit;
   method?: HttpMethod;
   query?: Record<string, string | number | boolean | undefined>;
@@ -20,10 +21,34 @@ export class ApiError extends Error {
 
 type HttpClientOptions = {
   baseUrl: string;
+  credentials?: RequestCredentials;
   defaultHeaders?: HeadersInit;
+  resolveHeaders?: () => HeadersInit | undefined | Promise<HeadersInit | undefined>;
 };
 
-export const createHttpClient = ({ baseUrl, defaultHeaders }: HttpClientOptions) => {
+const mergeHeaders = (...headersInit: Array<HeadersInit | undefined>) => {
+  const headers = new Headers();
+
+  for (const init of headersInit) {
+    if (!init) {
+      continue;
+    }
+
+    const nextHeaders = new Headers(init);
+    for (const [key, value] of nextHeaders.entries()) {
+      headers.set(key, value);
+    }
+  }
+
+  return headers;
+};
+
+export const createHttpClient = ({
+  baseUrl,
+  credentials,
+  defaultHeaders,
+  resolveHeaders,
+}: HttpClientOptions) => {
   const normalizedBaseUrl = baseUrl.replace(/\/+$/, "");
 
   return async <TResponse>(path: string, config: RequestConfig = {}): Promise<TResponse> => {
@@ -39,12 +64,12 @@ export const createHttpClient = ({ baseUrl, defaultHeaders }: HttpClientOptions)
       }
     }
 
+    const resolvedHeaders = resolveHeaders ? await resolveHeaders() : undefined;
+
     const response = await fetch(url, {
       body: config.body,
-      headers: {
-        ...defaultHeaders,
-        ...config.headers,
-      },
+      credentials: config.credentials ?? credentials,
+      headers: mergeHeaders(defaultHeaders, resolvedHeaders, config.headers),
       method: config.method ?? "GET",
       signal: config.signal,
     });
@@ -53,6 +78,15 @@ export const createHttpClient = ({ baseUrl, defaultHeaders }: HttpClientOptions)
       throw new ApiError(`Request failed with status ${response.status}`, response);
     }
 
-    return (await response.json()) as TResponse;
+    if (response.status === 204) {
+      return undefined as TResponse;
+    }
+
+    const responseContentType = response.headers.get("content-type") ?? "";
+    if (responseContentType.includes("application/json")) {
+      return (await response.json()) as TResponse;
+    }
+
+    return (await response.text()) as TResponse;
   };
 };

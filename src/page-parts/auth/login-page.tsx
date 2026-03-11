@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { authClient } from "@/lib/auth/auth-client";
-import { useAuthSession } from "@/lib/auth/session";
+import { clearAuthToken, getAuthToken, useAuthToken } from "@/lib/auth/token-store";
 
 const MIN_PASSWORD_LENGTH = 8;
 
@@ -18,7 +18,7 @@ const getDisplayNameFromEmail = (email: string) => {
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const { data: session, isPending: isSessionPending } = useAuthSession();
+  const authToken = useAuthToken();
   const [mode, setMode] = useState<AuthMode>("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,7 +55,7 @@ export const LoginPage = () => {
     return true;
   };
 
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     clearMessages();
 
@@ -78,7 +78,8 @@ export const LoginPage = () => {
           return;
         }
 
-        await authClient.signOut();
+        clearAuthToken();
+
         setMode("login");
         setPassword("");
         setConfirmPassword("");
@@ -96,6 +97,10 @@ export const LoginPage = () => {
         return;
       }
 
+      if (!getAuthToken()) {
+        setErrorMessage("Login succeeded, but no token was returned by the auth server.");
+        return;
+      }
       await navigate({ to: "/" });
     } catch (error) {
       setErrorMessage(
@@ -107,20 +112,12 @@ export const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (!session?.user) {
+    if (!authToken) {
       return;
     }
 
     void navigate({ to: "/" });
-  }, [navigate, session]);
-
-  if (isSessionPending) {
-    return (
-      <section className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-md items-center justify-center px-4 py-8">
-        <p className="text-muted-foreground text-sm">Checking session...</p>
-      </section>
-    );
-  }
+  }, [authToken, navigate]);
 
   return (
     <section className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-md items-center px-4 py-8">
