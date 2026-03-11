@@ -25,6 +25,9 @@ export const Header = ({ title }: HeaderProps) => {
           <Link to="/gallery" className="[&.active]:font-bold">
             {t("layout.nav.gallery")}
           </Link>
+          <Link to="/login" className="[&.active]:font-bold">
+            Login
+          </Link>
           <ModeToggle />
         </div>
       </div>

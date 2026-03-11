@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
+  readonly VITE_API_BASE_URL: string;
   readonly VITE_JELLYFIN_BASE_URL: string;
   readonly VITE_JELLYFIN_API_KEY: string;
   readonly VITE_JELLYFIN_USER_ID: string;
