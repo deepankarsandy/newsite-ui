@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { ModeToggle } from "@/components/dark-mode/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth/auth-provider";
+import { MyLogo } from "@/icons/my-icon";
 
 type HeaderProps = {
   title: string;
@@ -21,7 +22,8 @@ export const Header = ({ title }: HeaderProps) => {
   return (
     <header className="bg-background/95 supports-backdrop-filter:bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur">
       <div className="container mx-auto flex h-16 items-center justify-between">
-        <Link to="/">
+        <Link to="/" className="flex items-center gap-2">
+          <MyLogo className="h-6 w-6" />
           <h1 className="text-2xl font-bold">{title}</h1>
         </Link>
         <div className="flex items-center gap-2">
