@@ -11,12 +11,12 @@ import { AuthProvider } from "./lib/auth/auth-provider";
 import { ReactQueryProvider } from "./lib/query/query-client";
 import { routeTree } from "./routeTree.gen";
 
-const { VITE_APP_ENV } = import.meta.env;
+// const { VITE_APP_ENV } = import.meta.env;
 
 // Create a new router instance
 const router = createRouter({
   routeTree,
-  basepath: VITE_APP_ENV === "development" ? "/" : "/site/",
+  // basepath: VITE_APP_ENV === "development" ? "/" : "/site/",
 });
 
 // Register the router instance for type safety

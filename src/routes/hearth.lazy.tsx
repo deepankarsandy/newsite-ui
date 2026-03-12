@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { JellyfinLogo } from "@/icons/jellyfin-icon";
 
-export const Route = createLazyFileRoute("/media")({
+export const Route = createLazyFileRoute("/hearth")({
   component: Media,
 });
 
@@ -69,9 +69,11 @@ function Media() {
           <p className="mb-3 text-xs tracking-[0.35em] text-zinc-300 uppercase">
             {t("media.eyebrow")}
           </p>
-          <h1 className="text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
-            {t("media.title")}
-          </h1>
+          <a href="/media">
+            <h1 className="text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
+              {t("media.title")}
+            </h1>
+          </a>
           <p className="mt-4 flex items-center justify-center gap-2 text-sm text-zinc-200/90">
             <span>{t("media.poweredBy")}</span>
             <JellyfinLogo size={18} className="shrink-0" aria-hidden="true" />

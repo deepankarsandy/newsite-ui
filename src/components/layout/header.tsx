@@ -28,7 +28,7 @@ export const Header = ({ title }: HeaderProps) => {
           <Link to="/music" className="[&.active]:font-bold">
             {t("layout.nav.music")}
           </Link>
-          <Link to="/media" className="[&.active]:font-bold">
+          <Link to="/hearth" className="[&.active]:font-bold">
             {t("layout.nav.media")}
           </Link>
           <Link to="/gallery" className="[&.active]:font-bold">
