@@ -7,8 +7,9 @@ import "./index.css";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 
 // Import the generated route tree
-import { routeTree } from "./routeTree.gen";
+import { AuthProvider } from "./lib/auth/auth-provider";
 import { ReactQueryProvider } from "./lib/query/query-client";
+import { routeTree } from "./routeTree.gen";
 
 const { VITE_APP_ENV } = import.meta.env;
 
@@ -28,9 +29,11 @@ declare module "@tanstack/react-router" {
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <ReactQueryProvider>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </AuthProvider>
     </ReactQueryProvider>
   </StrictMode>,
 );

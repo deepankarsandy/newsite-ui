@@ -2,9 +2,9 @@ import { YOUTUBE_PLAYLISTS, YOUTUBE_PROFILE } from "@assets";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { ChevronDown, Disc3, ListMusic } from "lucide-react";
 import { useState } from "react";
+import { YouTubeLogo } from "@/icons/youtube-icon";
 import { YTMusicLogo } from "@/icons/yt-music-icon";
 import { cn } from "@/lib/utils";
-import { YouTubeLogo } from "@/icons/youtube-icon";
 
 export const Route = createLazyFileRoute("/music")({
   component: Music,

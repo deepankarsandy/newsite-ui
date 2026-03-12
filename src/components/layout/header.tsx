@@ -1,13 +1,22 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { ModeToggle } from "@/components/dark-mode/mode-toggle";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/lib/auth/auth-provider";
 
 type HeaderProps = {
   title: string;
 };
 
 export const Header = ({ title }: HeaderProps) => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
+  const { authStatus, isLoggingOut, logout } = useAuth();
+
+  const onLogout = async () => {
+    await logout();
+    await navigate({ to: "/login" });
+  };
 
   return (
     <header className="bg-background/95 supports-backdrop-filter:bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur">
@@ -25,9 +34,15 @@ export const Header = ({ title }: HeaderProps) => {
           <Link to="/gallery" className="[&.active]:font-bold">
             {t("layout.nav.gallery")}
           </Link>
-          <Link to="/login" className="[&.active]:font-bold">
-            Login
-          </Link>
+          {authStatus === "authenticated" ? (
+            <Button variant="ghost" onClick={onLogout} disabled={isLoggingOut}>
+              {isLoggingOut ? "Logging out..." : "Log out"}
+            </Button>
+          ) : (
+            <Link to="/login" className="[&.active]:font-bold">
+              Login
+            </Link>
+          )}
           <ModeToggle />
         </div>
       </div>
