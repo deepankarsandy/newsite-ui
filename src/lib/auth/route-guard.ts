@@ -1,12 +1,13 @@
-import { redirect } from "@tanstack/react-router";
+import { ParsedLocation, redirect } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { getAuthToken } from "@/lib/auth/token-store";
 
 type GuardArgs = {
   cause: "enter" | "stay" | "preload";
+  location: ParsedLocation;
 };
 
-export const requireAuth = ({ cause }: GuardArgs) => {
+export const requireAuth = ({ cause, location }: GuardArgs) => {
   if (getAuthToken()) {
     return;
   }
@@ -16,5 +17,10 @@ export const requireAuth = ({ cause }: GuardArgs) => {
   }
 
   toast.error("Please login to continue.");
-  throw redirect({ to: "/login" });
+  throw redirect({
+    to: "/login",
+    search: {
+      returnPath: location.pathname,
+    },
+  });
 };

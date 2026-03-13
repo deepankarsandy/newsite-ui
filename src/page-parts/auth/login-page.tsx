@@ -1,4 +1,4 @@
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { authClient } from "@/lib/auth/auth-client";
 import { clearAuthToken, getAuthToken, useAuthToken } from "@/lib/auth/token-store";
+import { Route } from "@/routes/login";
 
 const MIN_PASSWORD_LENGTH = 8;
 
@@ -26,6 +27,9 @@ export const LoginPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null | undefined>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const { returnPath } = useSearch({
+    from: Route.fullPath,
+  });
 
   const isSignUpMode = mode === "signup";
 
@@ -99,6 +103,10 @@ export const LoginPage = () => {
 
       if (!getAuthToken()) {
         setErrorMessage("Login succeeded, but no token was returned by the auth server.");
+        return;
+      }
+      if (returnPath) {
+        await navigate({ to: returnPath });
         return;
       }
       await navigate({ to: "/" });
