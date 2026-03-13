@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     isAuthenticated: authStatus === "authenticated",
     isLoggingOut,
     logout,
-    user: userQuery.data ?? null,
+    user: userQuery.data?.data ?? null,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

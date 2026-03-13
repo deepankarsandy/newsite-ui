@@ -23,6 +23,7 @@ export default defineConfig({
   ],
   server: {
     port: 8080,
+    allowedHosts: ["sandyhome.local"],
   },
   // base: process.env.NODE_ENV === "production" ? "/site/" : "/",
   test: {

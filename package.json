@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "routes:gen": "tsr generate",
-    "build": "pnpm routes:gen && tsc -b && vite build",
+    "build": "pnpm routes:gen && tsc -b && vite build --mode production",
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier . --write",
