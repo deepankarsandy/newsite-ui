@@ -17,25 +17,19 @@ export const MyLogo = ({ size = 24, className, ...props }: IconProps) => {
       <defs>
         {/* <!-- Premium Dark Gradient Background --> */}
         <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#2A2D34" />
-          <stop offset="100%" stop-color="#111215" />
+          <stop offset="0%" stopColor="#2A2D34" />
+          <stop offset="100%" stopColor="#111215" />
         </linearGradient>
 
         {/* <!-- Metallic/Bright Text Gradient for depth --> */}
         <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="100%" stop-color="#D1D5DB" />
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="100%" stopColor="#D1D5DB" />
         </linearGradient>
 
         {/* <!-- Subtle Drop Shadow for a 3D "Badge" effect --> */}
         <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow
-            dx="0"
-            dy="12"
-            stdDeviation="16"
-            flood-color="#000000"
-            flood-opacity="0.4"
-          />
+          <feDropShadow dx="0" dy="12" stdDeviation="16" floodColor="#000000" floodOpacity="0.4" />
         </filter>
       </defs>
 
@@ -54,8 +48,8 @@ export const MyLogo = ({ size = 24, className, ...props }: IconProps) => {
         r="224"
         fill="none"
         stroke="#FFFFFF"
-        stroke-opacity="0.06"
-        stroke-width="2"
+        strokeOpacity="0.06"
+        strokeWidth="2"
       />
 
       {/* <!-- Typography and Slash Group --> */}
@@ -80,11 +74,11 @@ export const MyLogo = ({ size = 24, className, ...props }: IconProps) => {
         <text
           x="150"
           y="190"
-          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-          font-size="160"
-          font-weight="900"
-          text-anchor="middle"
-          dominant-baseline="central"
+          fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+          fontSize="160"
+          fontWeight="900"
+          textAnchor="middle"
+          dominantBaseline="central"
         >
           D
         </text>
@@ -96,11 +90,11 @@ export const MyLogo = ({ size = 24, className, ...props }: IconProps) => {
         <text
           x="362"
           y="322"
-          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-          font-size="160"
-          font-weight="900"
-          text-anchor="middle"
-          dominant-baseline="central"
+          fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+          fontSize="160"
+          fontWeight="900"
+          textAnchor="middle"
+          dominantBaseline="central"
         >
           S
         </text>
