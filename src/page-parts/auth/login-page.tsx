@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { authClient } from "@/lib/auth/auth-client";
-import { clearAuthToken, getAuthToken, useAuthToken } from "@/lib/auth/token-store";
+import { getAuthToken, useAuthToken } from "@/lib/auth/token-store";
 import { Route } from "@/routes/login";
 
 const MIN_PASSWORD_LENGTH = 8;
@@ -82,33 +82,33 @@ export const LoginPage = () => {
           return;
         }
 
-        clearAuthToken();
-
-        setMode("login");
         setPassword("");
         setConfirmPassword("");
-        setSuccessMessage("Account created. Please log in with your credentials.");
-        return;
+        setSuccessMessage("Account created.");
       }
 
-      const { error } = await authClient.signIn.email({
-        email,
-        password,
-      });
+      if (mode === "login") {
+        const { error } = await authClient.signIn.email({
+          email,
+          password,
+        });
 
-      if (error) {
-        setErrorMessage(error.message);
-        return;
+        if (error) {
+          setErrorMessage(error.message);
+          return;
+        }
+
+        if (!getAuthToken()) {
+          setErrorMessage("Login succeeded, but no token was returned by the auth server.");
+          return;
+        }
       }
 
-      if (!getAuthToken()) {
-        setErrorMessage("Login succeeded, but no token was returned by the auth server.");
-        return;
-      }
       if (returnPath) {
         await navigate({ to: returnPath });
         return;
       }
+
       await navigate({ to: "/" });
     } catch (error) {
       setErrorMessage(
