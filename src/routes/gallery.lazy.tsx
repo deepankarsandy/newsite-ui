@@ -2,6 +2,7 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ImmichLogo } from "@/icons/immich-icon";
+const { VITE_APP_ENV } = import.meta.env;
 
 export const Route = createLazyFileRoute("/gallery")({
   component: Gallery,
@@ -16,6 +17,16 @@ function Gallery() {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [loadedSlides, setLoadedSlides] = useState<number[]>([0]);
+
+  const goToGallery = () => {
+    if (VITE_APP_ENV === "development") {
+      window.open("http://acer.local:2283", "_blank");
+      return;
+    }
+
+    const { protocol, hostname } = window.location;
+    window.open(`${protocol}//${hostname}:2283`, "_blank");
+  };
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -65,9 +76,15 @@ function Gallery() {
           <p className="mb-3 text-xs tracking-[0.35em] text-zinc-300 uppercase">
             {t("gallery.eyebrow")}
           </p>
-          <h1 className="text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
-            {t("gallery.title")}
-          </h1>
+          <a
+            href="#"
+            onClick={goToGallery}
+            className="transition-colors duration-300 hover:text-blue-300"
+          >
+            <h1 className="text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
+              {t("gallery.title")}
+            </h1>
+          </a>
           <p className="mt-4 flex items-center justify-center gap-2 text-sm text-zinc-200/90">
             <span>{t("gallery.poweredBy")}</span>
             <ImmichLogo size={18} className="shrink-0" aria-hidden="true" />

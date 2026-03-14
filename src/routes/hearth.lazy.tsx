@@ -69,7 +69,11 @@ function Media() {
           <p className="mb-3 text-xs tracking-[0.35em] text-zinc-300 uppercase">
             {t("media.eyebrow")}
           </p>
-          <a href="/media" className="transition-colors duration-300 hover:text-blue-300">
+          <a
+            href="/media"
+            target="_blank"
+            className="transition-colors duration-300 hover:text-blue-300"
+          >
             <h1 className="text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
               {t("media.title")}
             </h1>

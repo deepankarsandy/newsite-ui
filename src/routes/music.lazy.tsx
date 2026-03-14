@@ -10,6 +10,7 @@ import {
   useYoutubeMusicPlaylistsQuery,
 } from "@/lib/api/youtube.api";
 import { cn } from "@/lib/utils";
+import { MyLogo } from "@/icons/my-icon";
 
 export const Route = createLazyFileRoute("/music")({
   component: Music,
@@ -42,11 +43,7 @@ function Music() {
     <main className="min-h-screen bg-black text-white">
       <div className="flex flex-wrap items-center justify-center gap-4 px-4 py-3 transition-colors hover:bg-white/5 sm:px-5">
         <div className="flex flex-col items-center">
-          <SongThumbnail
-            title={YOUTUBE_PROFILE.name}
-            thumbnail={YOUTUBE_PROFILE.music.thumbnail}
-            className="h-24 w-24"
-          />
+          <MyLogo className="text-color-white h-24 w-24" />
           <span>{YOUTUBE_PROFILE.name}</span>
         </div>
         <div className="flex flex-wrap items-center gap-4">

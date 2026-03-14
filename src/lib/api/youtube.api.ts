@@ -19,6 +19,7 @@ export type TYouTubePlaylist = {
   kind: string;
   etag: string;
   id: string;
+  hidden?: boolean;
   snippet: {
     publishedAt: string;
     channelId: string;
@@ -30,6 +31,9 @@ export type TYouTubePlaylist = {
       title: string;
       description: string;
     };
+  };
+  status: {
+    privacyStatus: "public" | "private" | "unlisted";
   };
   contentDetails: {
     itemCount: number;
@@ -61,7 +65,7 @@ export type TYouTubePlaylistItem = {
     videoPublishedAt: string;
   };
   status: {
-    privacyStatus: string;
+    privacyStatus: "public" | "private" | "unlisted";
   };
 };
 
